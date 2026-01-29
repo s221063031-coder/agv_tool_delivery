@@ -1,0 +1,36 @@
+<?xml version="1.0" ?>
+<sdf version="1.6">
+  <world name="kilang_layout">
+    <include><uri>model://sun</uri></include>
+    <include><uri>model://ground_plane</uri></include>
+
+    <model name='kilang_structure'>
+      <static>true</static>
+      <pose>0 0 0 0 0 0</pose>
+      
+      <link name='wall_1'>
+        <visual name='v1'>
+          <pose>-3 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.2 10 1</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+        <collision name='c1'>
+          <pose>-3 0 0.5 0 0 0</pose>
+          <geometry><box><size>0.2 10 1</size></box></geometry>
+        </collision>
+      </link>
+
+      <link name='wall_2'>
+        <visual name='v2'>
+          <pose>1 2 0.5 0 0 0</pose>
+          <geometry><box><size>4 0.2 1</size></box></geometry>
+          <material><script><name>Gazebo/Grey</name></script></material>
+        </visual>
+        <collision name='c2'>
+          <pose>1 2 0.5 0 0 0</pose>
+          <geometry><box><size>4 0.2 1</size></box></geometry>
+        </collision>
+      </link>
+    </model>
+  </world>
+</sdf>
