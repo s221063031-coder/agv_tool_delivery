@@ -47,4 +47,22 @@ ros2 run tf2_tools view_frames
 ros2 run teleop_twist_keyboard teleop_twist_keyboard
 ```
 
+## 📐 Robot & Environment Design
 
+### 🤖 AGV Robot Design (URDF)
+The physical structure, joint limits, and sensor placements (LiDAR) are defined in:
+* **File:** `src/agv_factory_sim/urdf/tool_delivery_agv.urdf`
+* **Features:** * Differential Drive plugin for motion control.
+    * LiDAR sensor link for obstacle detection.
+    * 3D visual and collision meshes.
+
+### 🏭 Factory Environment (Gazebo World)
+The custom factory layout with walls and delivery stations is defined in:
+* **Folder:** `src/agv_factory_sim/worlds/`
+* **Primary World:** `kilang_layout.world`
+* **Features:** Realistic lighting, static obstacles, and localized coordinate systems.
+
+### 🗺️ Navigation Map (SLAM)
+The 2D occupancy grid used for the A* path planning logic is located in:
+* **Folder:** `src/agv_factory_sim/maps/`
+* **Files:** `.yaml` (metadata) and `.pgm` (occupancy grid image).
